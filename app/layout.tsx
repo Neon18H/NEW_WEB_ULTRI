@@ -1,18 +1,35 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { siteConfig } from "@/lib/site";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter"
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space"
+});
 
 export const metadata: Metadata = {
   title: "UltriAtech | IA, Ciberseguridad y Software",
-  description:
-    "UltriAtech impulsa empresas con inteligencia artificial, ciberseguridad y desarrollo de software. Soluciones enterprise listas para crecer.",
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: "UltriAtech",
     description:
       "IA, ciberseguridad y software para escalar operaciones con seguridad y eficiencia.",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UltriAtech",
+    description: siteConfig.description
   }
 };
 
@@ -22,11 +39,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${inter.className} bg-ultri-dark text-slate-100`}>
+    <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-ultri-dark text-slate-100">
         <div className="min-h-screen bg-tech">
           <div className="min-h-screen bg-grid bg-[size:120px_120px]">
-            {children}
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
           </div>
         </div>
       </body>
