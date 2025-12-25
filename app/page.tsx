@@ -1,29 +1,21 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Solutions from "@/components/Solutions";
-import Process from "@/components/Process";
-import CaseStudies from "@/components/CaseStudies";
-import TechStack from "@/components/TechStack";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import { CapabilitiesSection } from "@/components/sections/capabilities";
+import { CTASection } from "@/components/sections/cta";
+import { HeroSection } from "@/components/sections/hero";
+import { PillarsSection } from "@/components/sections/pillars";
+import { ProcessSection } from "@/components/sections/process";
+import { ResultsSection } from "@/components/sections/results";
+import { TechStackSection } from "@/components/sections/tech-stack";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="relative">
-      <Navbar />
-      <main className="pt-24">
-        <Hero />
-        <Services />
-        <Solutions />
-        <Process />
-        <CaseStudies />
-        <TechStack />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
+    <div>
+      <HeroSection />
+      <PillarsSection />
+      <ProcessSection />
+      <CapabilitiesSection />
+      <ResultsSection />
+      <TechStackSection />
+      <CTASection />
     </div>
   );
 }
