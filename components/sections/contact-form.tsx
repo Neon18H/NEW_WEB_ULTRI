@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +8,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Toast, ToastViewport, type ToastState } from "@/components/ui/toast";
 
-const initialState = {
+const baseInitialState = {
   name: "",
   email: "",
   company: "",
@@ -18,18 +17,27 @@ const initialState = {
   message: ""
 };
 
-export function ContactForm() {
-  const [formState, setFormState] = useState(initialState);
+type ContactFormProps = {
+  defaultService?: string;
+};
+
+const getInitialState = (defaultService?: string) => ({
+  ...baseInitialState,
+  service: defaultService ?? ""
+});
+
+export function ContactForm({ defaultService }: ContactFormProps) {
+  const [formState, setFormState] = useState(() =>
+    getInitialState(defaultService)
+  );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [toasts, setToasts] = useState<ToastState[]>([]);
-  const searchParams = useSearchParams();
-  const serviceParam = searchParams.get("service");
 
   useEffect(() => {
-    if (serviceParam && !formState.service) {
-      setFormState((prev) => ({ ...prev, service: serviceParam }));
+    if (defaultService && !formState.service) {
+      setFormState((prev) => ({ ...prev, service: defaultService }));
     }
-  }, [formState.service, serviceParam]);
+  }, [defaultService, formState.service]);
 
   const isValid = useMemo(() => {
     return (
@@ -84,7 +92,7 @@ export function ContactForm() {
         variant: "success"
       }
     ]);
-    setFormState(initialState);
+    setFormState(getInitialState(defaultService));
   };
 
   const handleDismiss = (id: number) => {
