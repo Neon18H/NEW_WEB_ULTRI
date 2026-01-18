@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactoPage() {
   return (
-    <section className="section-padding">
+    <section id="contacto" className="section-padding">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="space-y-4">
           <p className="text-sm uppercase tracking-[0.2em] text-slate-400">

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,14 @@ export function ContactForm() {
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [toasts, setToasts] = useState<ToastState[]>([]);
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service");
+
+  useEffect(() => {
+    if (serviceParam && !formState.service) {
+      setFormState((prev) => ({ ...prev, service: serviceParam }));
+    }
+  }, [formState.service, serviceParam]);
 
   const isValid = useMemo(() => {
     return (
@@ -146,6 +155,9 @@ export function ContactForm() {
             <option value="">Seleccionar</option>
             <option value="ia">IA aplicada</option>
             <option value="ciberseguridad">Ciberseguridad</option>
+            <option value="soc-completo">
+              SOC Completo (Infraestructura Crítica)
+            </option>
             <option value="software">Software enterprise</option>
             <option value="assessment">Assessment integral</option>
           </Select>
