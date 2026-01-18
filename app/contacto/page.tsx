@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
-import { ContactForm } from "@/components/sections/contact-form";
+import { Suspense } from "react";
+
+import ContactoClient from "./ContactoClient";
 
 export const metadata: Metadata = {
   title: "Contacto | UltriAtech",
@@ -20,7 +22,13 @@ export default function ContactoPage() {
             Cuéntanos el desafío y definiremos un diagnóstico claro y accionable.
           </p>
         </div>
-        <ContactForm />
+        <Suspense
+          fallback={
+            <div className="h-40 animate-pulse rounded-xl border border-white/10 bg-white/5" />
+          }
+        >
+          <ContactoClient />
+        </Suspense>
       </div>
     </section>
   );
