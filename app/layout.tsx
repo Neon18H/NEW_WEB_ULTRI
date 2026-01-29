@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 import { BackgroundDNA } from "@/components/layout/background-dna";
-import { DNAThreeBackground } from "@/components/layout/DNAThreeBackground";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { siteConfig } from "@/lib/site";
@@ -40,13 +39,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const enableThreeBackground = true;
-
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-ultri-dark text-slate-100">
         <div className="relative min-h-screen">
-          {enableThreeBackground ? <DNAThreeBackground /> : <BackgroundDNA />}
+          <BackgroundDNA />
           <div className="relative z-10">
             <Navbar />
             <main>{children}</main>
