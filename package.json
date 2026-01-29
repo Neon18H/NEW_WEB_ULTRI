@@ -14,8 +14,11 @@
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.460.0",
     "next": "^14.2.35",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.166.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
