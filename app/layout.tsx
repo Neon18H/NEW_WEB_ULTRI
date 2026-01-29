@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
+import { BackgroundDNA } from "@/components/layout/background-dna";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { siteConfig } from "@/lib/site";
@@ -41,8 +42,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-ultri-dark text-slate-100">
-        <div className="min-h-screen bg-tech">
-          <div className="min-h-screen bg-grid bg-[size:120px_120px]">
+        <div className="relative min-h-screen">
+          <BackgroundDNA />
+          <div className="relative z-10">
             <Navbar />
             <main>{children}</main>
             <Footer />
