@@ -5,6 +5,7 @@ import "./globals.css";
 import { BackgroundDNA } from "@/components/layout/background-dna";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/lib/site";
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <Footer />
+            <WhatsAppButton />
           </div>
         </div>
       </body>
