@@ -12,15 +12,6 @@ export function HeroSection() {
       primaryButtonHref="/contacto"
       secondaryButtonText="Ver servicios"
       secondaryButtonHref="/servicios"
-      ctaButtonText="Agendar diagnóstico"
-      ctaButtonHref="/contacto"
-      navLinks={[
-        { label: "Home", href: "/", isActive: true },
-        { label: "Ciberseguridad", href: "/servicios/ciberseguridad" },
-        { label: "IA", href: "/servicios/ia" },
-        { label: "SOC", href: "/#soc" },
-        { label: "Recursos", href: "/recursos" },
-      ]}
       partnersTitle="Metodologías y marcos internacionales"
     />
   );
