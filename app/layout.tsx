@@ -7,15 +7,8 @@ import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/lib/site";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter"
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space"
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
 
 export const metadata: Metadata = {
   title: "UltriAtech | Ciberseguridad e IA aplicada",
@@ -23,22 +16,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: "UltriAtech — Ciberseguridad & IA para entornos críticos",
-    description:
-      "Gestión de vulnerabilidades, hacking ético, OSINT, SOC, respuesta a ransomware e IA aplicada para empresas.",
+    description: "Gestión de vulnerabilidades, hacking ético, OSINT, SOC, respuesta a ransomware e IA aplicada.",
     type: "website"
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "UltriAtech",
-    description: siteConfig.description
-  }
+  twitter: { card: "summary_large_image", title: "UltriAtech", description: siteConfig.description }
 };
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-ultri-dark text-slate-100">

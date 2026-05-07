@@ -163,3 +163,13 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+/* ── ResponsiveHeroBanner animations ── */
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide-in-1 { animation: fade-slide-in 0.6s ease forwards; opacity: 0; }
+.animate-fade-slide-in-2 { animation: fade-slide-in 0.6s ease 0.15s forwards; opacity: 0; }
+.animate-fade-slide-in-3 { animation: fade-slide-in 0.6s ease 0.3s forwards; opacity: 0; }
+.animate-fade-slide-in-4 { animation: fade-slide-in 0.6s ease 0.45s forwards; opacity: 0; }
