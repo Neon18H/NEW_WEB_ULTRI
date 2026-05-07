@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { resourceArticles } from "@/lib/resources";
+import { Navbar } from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
   title: "Recursos | UltriAtech",
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 
 export default function RecursosPage() {
   return (
-    <section className="section-padding">
+    <>
+      <Navbar />
+      <section className="section-padding">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="space-y-4">
           <p className="text-sm uppercase tracking-[0.2em] text-slate-400">

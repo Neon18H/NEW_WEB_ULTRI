@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Card } from "@/components/ui/card";
+import { Navbar } from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
   title: "Nosotros | UltriAtech",
@@ -33,7 +34,9 @@ const values = [
 
 export default function NosotrosPage() {
   return (
-    <div className="space-y-16 pb-20">
+    <>
+      <Navbar />
+      <div className="space-y-16 pb-20">
       <section className="section-padding">
         <div className="mx-auto max-w-4xl space-y-6">
           <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
@@ -44,7 +47,7 @@ export default function NosotrosPage() {
           </h1>
           <p className="section-subtitle">
             UltriAtech acompaña a organizaciones que necesitan ejecutar iniciativas
-            complejas en IA, ciberseguridad y software con control, seguridad y
+            complejas en IA y ciberseguridad con control, seguridad y
             alineación estratégica.
           </p>
         </div>
@@ -97,7 +100,7 @@ export default function NosotrosPage() {
         <div className="mx-auto max-w-4xl rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-10">
           <h2 className="text-2xl font-semibold text-white">Por qué UltriAtech</h2>
           <ul className="mt-4 space-y-2 text-sm text-cyan-100">
-            <li>• Experiencia multidisciplinaria en IA, ciberseguridad y software.</li>
+            <li>• Experiencia multidisciplinaria en IA y ciberseguridad.</li>
             <li>• Enfoque enterprise con entregables claros y métricas compartidas.</li>
             <li>• Priorizamos seguridad, privacidad y continuidad operativa.</li>
           </ul>

@@ -1,4 +1,4 @@
-export type ServiceCategoryId = "ia" | "ciberseguridad" | "software";
+export type ServiceCategoryId = "ia" | "ciberseguridad";
 
 export type Service = {
   slug: string;
@@ -345,6 +345,99 @@ const iaServices: Service[] = [
 ];
 
 const ciberServices: Service[] = [
+
+  {
+    slug: "hacking-etico",
+    title: "Hacking Ético (Red Team)",
+    summary: "Simulación de ataques reales para exponer vulnerabilidades críticas.",
+    description:
+      "Ejecutamos ejercicios de red team controlados que simulan actores maliciosos reales para evaluar la resiliencia de tu organización.",
+    bullets: [
+      "Simulación de APT y ataques dirigidos",
+      "Phishing y ingeniería social controlada",
+      "Reporte ejecutivo y técnico con evidencias"
+    ],
+    tags: ["Red Team", "APT", "Social Engineering"],
+    filters: ["Defensa"],
+    overview:
+      "Evaluamos tu postura de seguridad desde la perspectiva de un atacante real con tácticas, técnicas y procedimientos actualizados.",
+    audience: "CISO, dirección de TI, equipos de seguridad.",
+    problems: [
+      "Controles no probados en escenarios reales",
+      "Falta de visibilidad ante ataques dirigidos",
+      "Cumplimiento insuficiente ante auditorías externas"
+    ],
+    deliverables: [
+      "Reporte ejecutivo de hallazgos",
+      "Evidencias y cadena de ataque",
+      "Plan de remediación priorizado"
+    ],
+    steps: [
+      "Definición de alcance y reglas de enfrentamiento",
+      "Reconocimiento y OSINT",
+      "Explotación controlada",
+      "Reporte y workshop de resultados"
+    ],
+    tools: ["Cobalt Strike", "Metasploit", "Kali Linux", "Social engineering toolkit"],
+    timeline: "3 a 6 semanas",
+    requirements: [
+      "Autorización escrita del cliente",
+      "Alcance definido",
+      "Contactos de emergencia"
+    ],
+    security: [
+      "Acuerdo de no divulgación",
+      "Manejo seguro de evidencias",
+      "Protocolo de cancelación"
+    ],
+    category: "ciberseguridad" as const
+  },
+  {
+    slug: "recuperacion-ransomware",
+    title: "Recuperación ante Ransomware",
+    summary: "Contención, análisis forense y recuperación ante ataques de cifrado.",
+    description:
+      "Respondemos a incidentes de ransomware con protocolos de contención rápida, análisis forense y restauración operativa para minimizar el impacto.",
+    bullets: [
+      "Contención en menos de 2 horas",
+      "Análisis forense de la cadena de ataque",
+      "Plan de recuperación y hardening post-incidente"
+    ],
+    tags: ["Ransomware", "IR", "DFIR", "Recovery"],
+    filters: ["Defensa"],
+    overview:
+      "Acompañamos desde la detección hasta la recuperación completa con comunicación clara hacia equipos técnicos y dirección.",
+    audience: "CISO, CEO, equipos de TI, legal y comunicaciones.",
+    problems: [
+      "Sistemas cifrados sin plan de respuesta",
+      "Presión por pago de rescate",
+      "Pérdida de datos críticos y operaciones"
+    ],
+    deliverables: [
+      "Informe forense del incidente",
+      "Plan de recuperación ejecutado",
+      "Recomendaciones de hardening post-ataque"
+    ],
+    steps: [
+      "Activación y contención inmediata",
+      "Análisis forense y triage",
+      "Recuperación desde backups verificados",
+      "Hardening y cierre de vectores"
+    ],
+    tools: ["EDR", "SIEM", "Forensic suites", "Backup solutions"],
+    timeline: "1 a 4 semanas",
+    requirements: [
+      "Acceso de emergencia a sistemas",
+      "Backups disponibles",
+      "Contactos críticos 24/7"
+    ],
+    security: [
+      "Protocolo de comunicación restringida",
+      "Cadena de custodia de evidencias",
+      "Coordinación legal si aplica"
+    ],
+    category: "ciberseguridad" as const
+  },
   {
     slug: "pentesting-web-api",
     title: "Pentesting Web/API (OWASP)",
@@ -639,253 +732,6 @@ const ciberServices: Service[] = [
   }
 ];
 
-const softwareServices: Service[] = [
-  {
-    slug: "desarrollo-web",
-    title: "Desarrollo web",
-    summary: "Portales y dashboards enterprise.",
-    description:
-      "Construimos experiencias web robustas orientadas a performance y escalabilidad.",
-    bullets: [
-      "Arquitectura modular",
-      "UX centrada en negocio",
-      "Stack moderno"
-    ],
-    tags: ["Web", "Product"],
-    filters: ["DevOps"],
-    overview:
-      "Desarrollamos portales y plataformas con foco en calidad y rendimiento.",
-    audience: "Empresas con operaciones digitales críticas.",
-    problems: [
-      "Portales obsoletos",
-      "Experiencia poco eficiente",
-      "Dificultad para escalar"
-    ],
-    deliverables: [
-      "Arquitectura front-end",
-      "Componentes reutilizables",
-      "Documentación técnica"
-    ],
-    steps: [
-      "Discovery funcional",
-      "Diseño y prototipo",
-      "Implementación",
-      "QA y lanzamiento"
-    ],
-    tools: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
-    timeline: "6 a 12 semanas",
-    requirements: [
-      "Requerimientos definidos",
-      "Stakeholders claves",
-      "Roadmap de producto"
-    ],
-    category: "software"
-  },
-  {
-    slug: "apis-microservicios",
-    title: "APIs & Microservicios",
-    summary: "Backends escalables y resilientes.",
-    description:
-      "Diseñamos APIs y microservicios con foco en disponibilidad y seguridad.",
-    bullets: [
-      "Diseño orientado a dominios",
-      "Observabilidad",
-      "Escalabilidad"
-    ],
-    tags: ["API", "Microservices"],
-    filters: ["DevOps"],
-    overview:
-      "Arquitecturas preparadas para crecimiento y multi-tenant.",
-    audience: "Equipos de ingeniería y arquitectura.",
-    problems: [
-      "Monolitos rígidos",
-      "Baja disponibilidad",
-      "Integraciones lentas"
-    ],
-    deliverables: [
-      "Diseño de APIs",
-      "Servicios implementados",
-      "Documentación"
-    ],
-    steps: [
-      "Modelado de dominio",
-      "Diseño API",
-      "Implementación",
-      "Observabilidad"
-    ],
-    tools: ["Node.js", "Go", "PostgreSQL", "Kubernetes"],
-    timeline: "8 a 16 semanas",
-    requirements: [
-      "Dominio claro",
-      "Infraestructura base",
-      "Plan de escalamiento"
-    ],
-    category: "software"
-  },
-  {
-    slug: "integraciones",
-    title: "Integraciones (ERP/CRM/pagos)",
-    summary: "Conectividad segura entre sistemas críticos.",
-    description:
-      "Integramos sistemas empresariales con APIs y middleware seguro.",
-    bullets: [
-      "Conectores seguros",
-      "Mapeo de datos",
-      "Pruebas end-to-end"
-    ],
-    tags: ["Integration", "ERP", "CRM"],
-    filters: ["DevOps"],
-    overview:
-      "Integramos plataformas para eliminar silos de información.",
-    audience: "Operaciones, TI, finanzas.",
-    problems: [
-      "Procesos duplicados",
-      "Errores en sincronización",
-      "Datos inconsistentes"
-    ],
-    deliverables: [
-      "Arquitectura de integración",
-      "Conectores implementados",
-      "Documentación"
-    ],
-    steps: [
-      "Levantamiento de sistemas",
-      "Diseño de integración",
-      "Implementación y pruebas",
-      "Monitoreo"
-    ],
-    tools: ["MuleSoft", "Zapier", "REST/GraphQL", "Kafka"],
-    timeline: "4 a 10 semanas",
-    requirements: [
-      "Acceso a APIs",
-      "Mapa de datos",
-      "Responsables técnicos"
-    ],
-    category: "software"
-  },
-  {
-    slug: "devops",
-    title: "DevOps & Observabilidad",
-    summary: "CI/CD, infraestructura y monitoreo continuo.",
-    description:
-      "Implementamos prácticas DevOps para acelerar entregas con estabilidad.",
-    bullets: [
-      "Pipelines CI/CD",
-      "Infraestructura como código",
-      "Observabilidad"
-    ],
-    tags: ["DevOps", "CI/CD"],
-    filters: ["DevOps"],
-    overview:
-      "Mejoramos la confiabilidad y velocidad de despliegue.",
-    audience: "Equipos de ingeniería y operaciones.",
-    problems: [
-      "Deploys manuales",
-      "Falta de monitoreo",
-      "Incidentes frecuentes"
-    ],
-    deliverables: [
-      "Pipelines CI/CD",
-      "Dashboards de observabilidad",
-      "Guías operativas"
-    ],
-    steps: [
-      "Evaluación de pipeline actual",
-      "Diseño DevOps",
-      "Implementación",
-      "Entrenamiento"
-    ],
-    tools: ["GitHub Actions", "Docker", "Terraform", "Grafana"],
-    timeline: "4 a 8 semanas",
-    requirements: [
-      "Repositorio en control",
-      "Accesos a infra",
-      "Entorno de staging"
-    ],
-    category: "software"
-  },
-  {
-    slug: "arquitectura-escalabilidad",
-    title: "Arquitectura y escalabilidad",
-    summary: "Diseños cloud-ready para crecimiento sostenido.",
-    description:
-      "Diseñamos arquitecturas resilientes que soportan crecimiento y cumplimiento.",
-    bullets: [
-      "Cloud readiness",
-      "Diseño resiliente",
-      "Optimización de costos"
-    ],
-    tags: ["Architecture", "Cloud"],
-    filters: ["DevOps"],
-    overview:
-      "Diseñamos estrategias para migración y escalabilidad.",
-    audience: "CTO, arquitectura, infraestructura.",
-    problems: [
-      "Escalamiento ineficiente",
-      "Costos impredecibles",
-      "Arquitecturas rígidas"
-    ],
-    deliverables: [
-      "Blueprint de arquitectura",
-      "Roadmap de migración",
-      "Recomendaciones técnicas"
-    ],
-    steps: [
-      "Assessment técnico",
-      "Diseño de arquitectura",
-      "Plan de migración",
-      "Acompañamiento"
-    ],
-    tools: ["AWS", "Azure", "Kubernetes", "Terraform"],
-    timeline: "6 a 10 semanas",
-    requirements: [
-      "Documentación técnica",
-      "Acceso a infra",
-      "Patrocinio técnico"
-    ],
-    category: "software"
-  },
-  {
-    slug: "mantenimiento-evolucion",
-    title: "Mantenimiento y evolución",
-    summary: "Soporte continuo y roadmap de mejoras.",
-    description:
-      "Aseguramos continuidad operativa y evolución de plataformas con SLA.",
-    bullets: [
-      "SLA y soporte",
-      "Mejora continua",
-      "Roadmap trimestral"
-    ],
-    tags: ["SLA", "Support"],
-    filters: ["DevOps"],
-    overview:
-      "Operamos y evolucionamos tu software con foco en estabilidad.",
-    audience: "Equipos de producto y operaciones.",
-    problems: [
-      "Deuda técnica",
-      "Falta de capacidad interna",
-      "Incidentes recurrentes"
-    ],
-    deliverables: [
-      "Plan de soporte",
-      "Sprints de mejora",
-      "Reportes de SLA"
-    ],
-    steps: [
-      "Diagnóstico de deuda",
-      "Plan de soporte",
-      "Ejecución",
-      "Optimización"
-    ],
-    tools: ["Jira", "Datadog", "Sentry", "GitHub"],
-    timeline: "Contratos trimestrales o anuales",
-    requirements: [
-      "Acceso a repositorios",
-      "Acuerdos de SLA",
-      "Backlog priorizado"
-    ],
-    category: "software"
-  }
 ];
 
 export const serviceCategories: ServiceCategory[] = [
@@ -993,66 +839,13 @@ export const serviceCategories: ServiceCategory[] = [
           "Podemos activar un plan de respuesta a incidentes con protocolos definidos."
       }
     ]
-  },
-  {
-    id: "software",
-    name: "Desarrollo de Software",
-    tagline: "Arquitectura escalable y productos robustos.",
-    description:
-      "Construimos plataformas digitales con foco en performance, seguridad y crecimiento.",
-    hero: {
-      title: "Software enterprise listo para escalar con tu negocio.",
-      subtitle:
-        "Diseñamos y desarrollamos plataformas digitales con calidad, observabilidad y soporte.",
-      ctaPrimary: "Agendar diagnóstico",
-      ctaSecondary: "Solicitar propuesta"
-    },
-    services: softwareServices,
-    useCases: [
-      "Modernización de portales internos",
-      "Microservicios para canales digitales",
-      "Integraciones con ERP/CRM y pagos"
-    ],
-    packages: [
-      {
-        name: "Starter",
-        description: "MVP o módulo específico.",
-        highlights: ["Arquitectura base", "Entrega rápida", "QA"],
-        disclaimer: "Alcance definido por sprint 0."
-      },
-      {
-        name: "Growth",
-        description: "Plataforma en evolución continua.",
-        highlights: ["CI/CD", "Observabilidad", "Roadmap"],
-        disclaimer: "Requiere backlog priorizado."
-      },
-      {
-        name: "Enterprise",
-        description: "Arquitectura completa con SLA.",
-        highlights: ["Escalabilidad", "Soporte 24/7", "Gobierno"],
-        disclaimer: "Se define contrato y SLA personalizados."
-      }
-    ],
-    faq: [
-      {
-        question: "¿Trabajan con equipos internos?",
-        answer:
-          "Sí, podemos co-desarrollar e integrar prácticas y estándares internos."
-      },
-      {
-        question: "¿Qué tecnología recomiendan?",
-        answer:
-          "Seleccionamos stack según objetivos, seguridad y escalabilidad requeridas."
-      }
-    ]
-  }
+ 
 ];
 
 export const serviceFilters = [
   "Automatización",
   "Data",
-  "Defensa",
-  "DevOps"
+  "Defensa"
 ] as const;
 
 export const getServiceBySlug = (

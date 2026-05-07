@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "UltriAtech",
   description:
-    "Consultora enterprise de inteligencia artificial, ciberseguridad y desarrollo de software.",
-  url: "https://ultriatech.example",
+    "Consultora enterprise de ciberseguridad e inteligencia artificial para empresas que no pueden permitirse fallar.",
+  url: "https://ultriatech.com",
   links: {
     linkedin: "https://linkedin.com",
     email: "contacto@ultriatech.com"
@@ -11,7 +11,8 @@ export const siteConfig = {
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Servicios", href: "/servicios" },
+  { label: "Ciberseguridad", href: "/servicios/ciberseguridad" },
+  { label: "IA", href: "/servicios/ia" },
   { label: "SOC", href: "/#soc" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Recursos", href: "/recursos" },
@@ -20,21 +21,15 @@ export const navItems = [
 
 export const serviceHighlights = [
   {
-    title: "IA Aplicada",
+    title: "Ciberseguridad táctica",
     description:
-      "Modelos confiables, automatización inteligente y copilots para operaciones críticas.",
-    href: "/servicios/ia"
-  },
-  {
-    title: "Ciberseguridad",
-    description:
-      "Evaluación, hardening y monitoreo continuo para reducir riesgo operacional.",
+      "Gestión de vulnerabilidades, hacking ético, OSINT y respuesta a ransomware para entornos críticos.",
     href: "/servicios/ciberseguridad"
   },
   {
-    title: "Software Enterprise",
+    title: "IA aplicada",
     description:
-      "Arquitectura escalable, integraciones y DevOps para acelerar resultados.",
-    href: "/servicios/software"
+      "Chatbots corporativos, automatización inteligente y analítica predictiva con modelos confiables.",
+    href: "/servicios/ia"
   }
 ];

@@ -166,7 +166,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
             <option value="soc-completo">
               SOC Completo (Infraestructura Crítica)
             </option>
-            <option value="software">Software enterprise</option>
+            
             <option value="assessment">Assessment integral</option>
           </Select>
           {errors.service ? (
