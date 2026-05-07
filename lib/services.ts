@@ -837,7 +837,7 @@ export const serviceCategories: ServiceCategory[] = [
           "Podemos activar un plan de respuesta a incidentes con protocolos definidos."
       }
     ]
- 
+  }
 ];
 
 export const serviceFilters = [
