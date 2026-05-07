@@ -1,18 +1,20 @@
-import ResponsiveHeroBanner from "@/components/ui/responsive-hero-banner";
+import dynamic from "next/dynamic";
+
+// Three.js solo en cliente
+const EtherealBeamsHero = dynamic(
+  () => import("@/components/ui/ethereal-beams-hero"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="min-h-screen w-full bg-[#050a14] flex items-center justify-center">
+        <div className="text-cyan-400/60 text-sm font-mono tracking-widest animate-pulse">
+          INICIALIZANDO...
+        </div>
+      </div>
+    ),
+  }
+);
 
 export function HeroSection() {
-  return (
-    <ResponsiveHeroBanner
-      badgeLabel="Nuevo"
-      badgeText="Servicio de respuesta a ransomware 24/7"
-      title="Ciberseguridad táctica."
-      titleLine2="IA aplicada."
-      description="UltriAtech protege activos críticos, detecta amenazas avanzadas y automatiza operaciones enterprise con metodologías probadas y equipos especializados."
-      primaryButtonText="Agendar diagnóstico"
-      primaryButtonHref="/contacto"
-      secondaryButtonText="Ver servicios"
-      secondaryButtonHref="/servicios"
-      partnersTitle="Metodologías y marcos internacionales"
-    />
-  );
+  return <EtherealBeamsHero />;
 }
