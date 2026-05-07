@@ -107,5 +107,6 @@ export default function NosotrosPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

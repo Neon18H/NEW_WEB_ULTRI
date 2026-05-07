@@ -732,8 +732,6 @@ const ciberServices: Service[] = [
   }
 ];
 
-];
-
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "ia",
