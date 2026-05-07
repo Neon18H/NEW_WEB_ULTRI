@@ -19,11 +19,7 @@ const categoryMeta: Record<ServiceCategoryId, { title: string; description: stri
     description:
       "Evaluación, hardening y detección para proteger activos críticos."
   },
-  software: {
-    title: "Servicios de Software | UltriAtech",
-    description:
-      "Desarrollo web, APIs y arquitectura escalable para entornos enterprise."
-  }
+
 };
 
 export async function generateStaticParams() {
