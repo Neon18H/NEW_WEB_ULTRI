@@ -362,9 +362,10 @@ export default function EtherealBeamsHero() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <p className="text-xs text-white/35 text-center uppercase tracking-[0.2em] mb-5">Metodologías y marcos</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {[["OWASP",true],["NIST CSF",true],["ISO 27001",true],["MITRE ATT&CK",false],["CIS Benchmarks",false]].map(([f, show]) => (
-              <div key={f} className="rounded-lg bg-white/4 ring-1 ring-white/8 backdrop-blur-sm px-4 py-2 text-xs font-semibold text-white/45 hover:text-white/75 hover:bg-white/8 transition-all cursor-default">
-                {f as string}
+            {(["OWASP","NIST CSF","ISO 27001","MITRE ATT&CK","CIS Benchmarks"]).map((name, i) => (
+              <div key={name}
+                className={`rounded-lg bg-white/4 ring-1 ring-white/8 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs font-semibold text-white/45 hover:text-white/75 hover:bg-white/8 transition-all cursor-default${i > 2 ? " hidden sm:block" : ""}`}>
+                {name}
               </div>
             ))}
           </div>
