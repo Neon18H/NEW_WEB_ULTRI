@@ -185,10 +185,10 @@ export function TechStackSection() {
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-400/70 font-semibold">
             // Ciberseguridad ofensiva & defensiva
           </p>
-          <div className="relative h-16 w-full">
+          <div className="relative h-12 sm:h-16 w-full">
             <InfiniteSlider duration={35} gap={56} className="flex h-full w-full items-center">
               {[...CIBER_TOOLS, ...CIBER_TOOLS].map(({ id, component: Logo, w }, i) => (
-                <div key={`${id}-${i}`} className={`${w} h-10 text-slate-300 opacity-70 hover:opacity-100 transition-opacity`}>
+                <div key={`${id}-${i}`} className={`${w} h-8 sm:h-10 text-slate-300 opacity-70 hover:opacity-100 transition-opacity`}>
                   <Logo />
                 </div>
               ))}
@@ -203,10 +203,10 @@ export function TechStackSection() {
           <p className="text-xs uppercase tracking-[0.18em] text-purple-400/70 font-semibold">
             // Inteligencia Artificial & automatización
           </p>
-          <div className="relative h-16 w-full">
+          <div className="relative h-12 sm:h-16 w-full">
             <InfiniteSlider duration={25} gap={56} reverse className="flex h-full w-full items-center">
               {[...IA_TOOLS, ...CIBER_TOOLS.slice(0, 6)].map(({ id, component: Logo, w }, i) => (
-                <div key={`ia-${id}-${i}`} className={`${w} h-10 text-slate-300 opacity-70 hover:opacity-100 transition-opacity`}>
+                <div key={`ia-${id}-${i}`} className={`${w} h-8 sm:h-10 text-slate-300 opacity-70 hover:opacity-100 transition-opacity`}>
                   <Logo />
                 </div>
               ))}
@@ -217,7 +217,7 @@ export function TechStackSection() {
         </div>
 
         {/* Sparkles section */}
-        <div className="relative h-72 w-full overflow-hidden rounded-3xl border border-white/8"
+        <div className="relative h-56 sm:h-72 w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/8"
           style={{ maskImage: 'radial-gradient(55% 55%, white, transparent)' }}>
           {/* Glow background */}
           <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#7c3aed,transparent_65%)] before:opacity-30" />

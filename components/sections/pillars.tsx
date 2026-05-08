@@ -34,7 +34,7 @@ export function PillarsSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
           {/* Ciberseguridad */}
           <Card className="h-full border-cyan-400/20 hover:border-cyan-400/40 transition-colors">
             <CardHeader>
@@ -52,7 +52,7 @@ export function PillarsSection() {
               <div className="grid gap-2">
                 {CIBER_SERVICES.map(({ icon: Icon, label, href }) => (
                   <Link key={label} href={href}
-                    className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/3 px-3 py-2.5 text-sm text-slate-300 transition hover:border-cyan-400/30 hover:text-white group">
+                    className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/3 px-3 py-2.5 text-xs sm:text-sm text-slate-300 transition hover:border-cyan-400/30 hover:text-white group">
                     <Icon className="h-3.5 w-3.5 text-cyan-400 flex-shrink-0" />
                     {label}
                     <ArrowUpRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400" />
@@ -84,7 +84,7 @@ export function PillarsSection() {
               <div className="grid gap-2">
                 {IA_SERVICES.map(({ icon: Icon, label, href }) => (
                   <Link key={label} href={href}
-                    className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/3 px-3 py-2.5 text-sm text-slate-300 transition hover:border-purple-400/30 hover:text-white group">
+                    className="flex items-center gap-2.5 rounded-xl border border-white/5 bg-white/3 px-3 py-2.5 text-xs sm:text-sm text-slate-300 transition hover:border-purple-400/30 hover:text-white group">
                     <Icon className="h-3.5 w-3.5 text-purple-400 flex-shrink-0" />
                     {label}
                     <ArrowUpRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-purple-400" />

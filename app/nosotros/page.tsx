@@ -78,7 +78,7 @@ export default function NosotrosPage() {
       <section className="section-padding">
         <div className="mx-auto max-w-6xl space-y-8">
           <h2 className="section-title">Valores</h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
             {values.map((value) => (
               <div
                 key={value.title}

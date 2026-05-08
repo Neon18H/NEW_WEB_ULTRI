@@ -6,12 +6,13 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Shield, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navItems = [
+interface NavItem { name: string; href: string; hideOnMobile?: boolean }
+const navItems: NavItem[] = [
   { name: "Ciberseguridad", href: "/servicios/ciberseguridad" },
   { name: "IA",             href: "/servicios/ia"             },
-  { name: "SOC",            href: "/#soc"                     },
-  { name: "Nosotros",       href: "/nosotros"                 },
-  { name: "Recursos",       href: "/recursos"                 },
+  { name: "SOC",            href: "/soc"                     },
+  { name: "Nosotros",       href: "/nosotros",  hideOnMobile: true },
+  { name: "Recursos",       href: "/recursos",  hideOnMobile: true },
 ];
 
 const EXPAND_SCROLL_THRESHOLD = 80;
@@ -77,7 +78,8 @@ export function AnimatedNav() {
   };
 
   return (
-    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 px-2 w-full flex justify-center pointer-events-none">
+      <div className="pointer-events-auto max-w-[calc(100vw-1rem)]">
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={isExpanded ? "expanded" : "collapsed"}
@@ -103,13 +105,13 @@ export function AnimatedNav() {
         <motion.div variants={itemVariants} className="w-px h-5 bg-white/10 mx-1" />
 
         {/* Nav links */}
-        <motion.div className={cn("flex items-center gap-0.5 px-1", !isExpanded && "pointer-events-none")}>
+        <motion.div className={cn("flex items-center gap-0 sm:gap-0.5 px-0.5 sm:px-1", !isExpanded && "pointer-events-none")}>
           {navItems.map((item) => (
             <motion.div key={item.name} variants={itemVariants}>
               <Link
                 href={item.href}
                 onClick={(e) => e.stopPropagation()}
-                className="text-sm font-medium text-white/65 hover:text-white transition-colors px-3 py-1.5 rounded-full hover:bg-white/8 whitespace-nowrap"
+                className="text-xs sm:text-sm font-medium text-white/65 hover:text-white transition-colors px-2 sm:px-3 py-1.5 rounded-full hover:bg-white/8 whitespace-nowrap"
               >
                 {item.name}
               </Link>

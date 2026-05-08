@@ -13,7 +13,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "Ciberseguridad", href: "/servicios/ciberseguridad" },
   { label: "IA", href: "/servicios/ia" },
-  { label: "SOC", href: "/#soc" },
+  { label: "SOC", href: "/soc" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Recursos", href: "/recursos" },
   { label: "Contacto", href: "/contacto" }

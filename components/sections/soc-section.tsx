@@ -86,7 +86,7 @@ export function SOCSection() {
             title={socCompletoOffer.title}
             subtitle={socCompletoOffer.subtitle}
           />
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="grid gap-8 grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div className="space-y-6">
               <div className="flex flex-wrap items-center gap-3">
                 <TechBadge>{socCompletoOffer.label}</TechBadge>
@@ -175,7 +175,7 @@ export function SOCSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                   Alcance
                 </p>
-                <ul className="grid gap-2 text-sm text-slate-100 sm:grid-cols-2">
+                <ul className="grid gap-2 text-sm text-slate-100 grid-cols-1 xs:grid-cols-2">
                   {socCompletoOffer.scope.map((item) => (
                     <li key={item} className="rounded-xl bg-white/5 px-3 py-2">
                       {item}
@@ -225,7 +225,7 @@ export function SOCSection() {
               ))}
             </div>
           </div>
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid gap-8 grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-white">Entregables</h3>
               <div className="flex flex-wrap gap-3">

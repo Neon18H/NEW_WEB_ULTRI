@@ -4,7 +4,6 @@ import { HeroSection } from "@/components/sections/hero";
 import { PillarsSection } from "@/components/sections/pillars";
 import { ProcessSection } from "@/components/sections/process";
 import { ResultsSection } from "@/components/sections/results";
-import { SOCSection } from "@/components/sections/soc-section";
 import { TechStackSection } from "@/components/sections/tech-stack";
 
 export default function HomePage() {
@@ -13,7 +12,6 @@ export default function HomePage() {
       <HeroSection />
       <PillarsSection />
       <ProcessSection />
-      <SOCSection />
       <CapabilitiesSection />
       <ResultsSection />
       <TechStackSection />
