@@ -2,10 +2,10 @@ export const siteConfig = {
   name: "UltriAtech",
   description:
     "Consultora enterprise de ciberseguridad e inteligencia artificial para empresas que no pueden permitirse fallar.",
-  url: "https://ultriatech.com",
+  url: "https://ultriatech.cloud",
   links: {
     linkedin: "https://linkedin.com",
-    email: "contacto@ultriatech.com"
+    email: "support@ultriatech.cloud"
   }
 };
 

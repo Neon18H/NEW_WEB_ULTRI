@@ -14,11 +14,11 @@ export function Footer() {
           <div className="space-y-2 text-xs text-slate-300">
             <p className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-cyan-200" />
-              CDMX · Bogotá · Remoto
+              Colombia · Medellin · Remoto
             </p>
             <p className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-cyan-200" />
-              +52 55 0000 0000
+              +57 320 6090618
             </p>
             <p className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-cyan-200" />
