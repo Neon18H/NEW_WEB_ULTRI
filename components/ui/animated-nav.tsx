@@ -7,10 +7,11 @@ import { Shield, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem { name: string; href: string; hideOnMobile?: boolean }
+
 const navItems: NavItem[] = [
   { name: "Ciberseguridad", href: "/servicios/ciberseguridad" },
   { name: "IA",             href: "/servicios/ia"             },
-  { name: "SOC",            href: "/soc"                     },
+  { name: "SOC",            href: "/soc"                      },
   { name: "Nosotros",       href: "/nosotros",  hideOnMobile: true },
   { name: "Recursos",       href: "/recursos",  hideOnMobile: true },
 ];
@@ -78,68 +79,74 @@ export function AnimatedNav() {
   };
 
   return (
-    <div className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 px-2 w-full flex justify-center pointer-events-none">
-      <div className="pointer-events-auto max-w-[calc(100vw-1rem)]">
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={isExpanded ? "expanded" : "collapsed"}
-        variants={containerVariants}
-        whileHover={!isExpanded ? { scale: 1.08 } : {}}
-        whileTap={!isExpanded  ? { scale: 0.95 } : {}}
-        onClick={handleNavClick}
-        className={cn(
-          "flex items-center overflow-hidden rounded-full h-12 shadow-lg",
-          "border border-white/10 bg-[#070a12]/80 backdrop-blur-xl",
-          !isExpanded && "cursor-pointer justify-center"
-        )}
-      >
-        {/* Logo / escudo */}
-        <motion.div variants={logoVariants} className="flex-shrink-0 flex items-center gap-2 pl-4 pr-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 shadow-sm">
-            <Shield className="h-3.5 w-3.5 text-white" />
-          </div>
-          <span className="text-sm font-bold text-white whitespace-nowrap">UltriAtech</span>
-        </motion.div>
-
-        {/* Separador */}
-        <motion.div variants={itemVariants} className="w-px h-5 bg-white/10 mx-1" />
-
-        {/* Nav links */}
-        <motion.div className={cn("flex items-center gap-0 sm:gap-0.5 px-0.5 sm:px-1", !isExpanded && "pointer-events-none")}>
-          {navItems.map((item) => (
-            <motion.div key={item.name} variants={itemVariants}>
-              <Link
-                href={item.href}
-                onClick={(e) => e.stopPropagation()}
-                className="text-xs sm:text-sm font-medium text-white/65 hover:text-white transition-colors px-2 sm:px-3 py-1.5 rounded-full hover:bg-white/8 whitespace-nowrap"
-              >
-                {item.name}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* CTA button */}
-        <motion.div variants={ctaVariants} className={cn("pr-2 pl-1", !isExpanded && "pointer-events-none")}>
-          <Link
-            href="/contacto"
-            onClick={(e) => e.stopPropagation()}
-            className="whitespace-nowrap inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-900 hover:bg-white/90 transition-colors"
-          >
-            Diagnóstico
-            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
-            </svg>
-          </Link>
-        </motion.div>
-
-        {/* Collapsed icon */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div variants={collapsedIconVariants} animate={isExpanded ? "expanded" : "collapsed"}>
-            <Menu className="h-5 w-5 text-white/80" />
+    <div className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none px-2">
+      <div className="pointer-events-auto w-auto max-w-[calc(100vw-1rem)]">
+        <motion.nav
+          initial={{ y: -80, opacity: 0 }}
+          animate={isExpanded ? "expanded" : "collapsed"}
+          variants={containerVariants}
+          whileHover={!isExpanded ? { scale: 1.08 } : {}}
+          whileTap={!isExpanded  ? { scale: 0.95 } : {}}
+          onClick={handleNavClick}
+          className={cn(
+            "flex items-center overflow-hidden rounded-full h-12 shadow-lg",
+            "border border-white/10 bg-[#070a12]/80 backdrop-blur-xl",
+            !isExpanded && "cursor-pointer justify-center"
+          )}
+        >
+          {/* Logo */}
+          <motion.div variants={logoVariants} className="flex-shrink-0 flex items-center gap-2 pl-4 pr-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 shadow-sm flex-shrink-0">
+              <Shield className="h-3.5 w-3.5 text-white" />
+            </div>
+            <span className="text-sm font-bold text-white whitespace-nowrap hidden sm:block">UltriAtech</span>
           </motion.div>
-        </div>
-      </motion.nav>
+
+          {/* Separador */}
+          <motion.div variants={itemVariants} className="w-px h-5 bg-white/10 mx-1 flex-shrink-0" />
+
+          {/* Nav links */}
+          <motion.div className={cn("flex items-center gap-0 sm:gap-0.5 px-0.5 sm:px-1", !isExpanded && "pointer-events-none")}>
+            {navItems.map((item) => (
+              <motion.div
+                key={item.name}
+                variants={itemVariants}
+                className={item.hideOnMobile ? "hidden sm:block" : ""}
+              >
+                <Link
+                  href={item.href}
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-xs sm:text-sm font-medium text-white/65 hover:text-white transition-colors px-2 sm:px-3 py-1.5 rounded-full hover:bg-white/8 whitespace-nowrap block"
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div variants={ctaVariants} className={cn("pr-2 pl-1 flex-shrink-0", !isExpanded && "pointer-events-none")}>
+            <Link
+              href="/contacto"
+              onClick={(e) => e.stopPropagation()}
+              className="whitespace-nowrap inline-flex items-center gap-1.5 rounded-full bg-white px-3 sm:px-3.5 py-1.5 text-xs font-semibold text-neutral-900 hover:bg-white/90 transition-colors"
+            >
+              <span className="hidden sm:inline">Diagnóstico</span>
+              <span className="sm:hidden">→</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="hidden sm:block">
+                <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+              </svg>
+            </Link>
+          </motion.div>
+
+          {/* Collapsed icon */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <motion.div variants={collapsedIconVariants} animate={isExpanded ? "expanded" : "collapsed"}>
+              <Menu className="h-5 w-5 text-white/80" />
+            </motion.div>
+          </div>
+        </motion.nav>
+      </div>
     </div>
   );
 }
