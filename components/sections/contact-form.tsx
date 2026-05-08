@@ -208,8 +208,8 @@ export function ContactForm({ defaultService }: ContactFormProps) {
         <div className="rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6 text-sm text-cyan-100">
           Información de contacto
           <ul className="mt-3 space-y-2 text-xs text-cyan-100">
-            <li>• contacto@ultriatech.com</li>
-            <li>• +52 55 0000 0000</li>
+            <li>• support@ultriatech.cloud</li>
+            <li>• +57 320 6090618</li>
             <li>• Disponibilidad: Lun-Vie 9:00 - 18:00</li>
           </ul>
         </div>
